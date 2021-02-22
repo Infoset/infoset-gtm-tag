@@ -1,0 +1,5 @@
+homepage: "https://infoset.app/"
+documentation: "https://infoset.app/help/en"
+versions:
+  - sha: .
+    changeNotes: Initial release.
