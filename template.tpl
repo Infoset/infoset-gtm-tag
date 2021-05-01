@@ -51,6 +51,64 @@ ___TEMPLATE_PARAMETERS___
         "enablingConditions": []
       }
     ]
+  },
+  {
+    "type": "GROUP",
+    "name": "advanced",
+    "displayName": "Advanced settings",
+    "groupStyle": "ZIPPY_CLOSED",
+    "subParams": [
+      {
+        "type": "TEXT",
+        "name": "tags",
+        "displayName": "Tags",
+        "simpleValueType": true,
+        "alwaysInSummary": false,
+        "help": "(Optional) Route chats from this chat widget to a specific chat tag"
+      },
+      {
+        "type": "TEXT",
+        "name": "horizontal_padding",
+        "displayName": "Horizontal Padding",
+        "simpleValueType": true,
+        "alwaysInSummary": false,
+        "help": "(Optional) Set the padding from the side"
+      },
+      {
+        "type": "TEXT",
+        "name": "vertical_padding",
+        "displayName": "Vertical Padding",
+        "simpleValueType": true,
+        "alwaysInSummary": false,
+        "help": "(Optional) Set the padding from the bottom"
+      },
+      {
+        "type": "SELECT",
+        "selectItems": [
+          {
+            "displayValue": "Right",
+            "value": "right"
+          },
+          {
+            "displayValue": "Left",
+            "value": "left"
+          }
+        ],
+        "name": "alignment",
+        "displayName": "Alignment",
+        "simpleValueType": true,
+        "alwaysInSummary": false,
+        "help": "(Optional) Align chat widget to the left or right"
+      },
+      {
+        "type": "TEXT",
+        "name": "custom_launcher",
+        "displayName": "Custom Launcher",
+        "simpleValueType": true,
+        "alwaysInSummary": false,
+        "help": "(Optional) Hide the default toggle button and use a custom HTML element to toggle the chat widget, e.g. \"#infoset_chat_launcher\""
+      }
+    ]
   }
 ]
 
@@ -73,7 +131,7 @@ setInWindow('InfosetChat', function(params){
 setInWindow('InfosetChat.q', []);
 
 var InfosetChat = copyFromWindow("InfosetChat");
-InfosetChat("boot", {widget:{apiKey:data.api_key}});
+InfosetChat("boot", {widget:{apiKey:data.api_key,alignment:data.alignment,horizontalPadding:data.horizontal_padding,verticalPadding:data.vertical_padding,customLauncher:data.custom_launcher}});
 
 InfosetChat("onBoot", function(ev) {
   dataLayerPush({

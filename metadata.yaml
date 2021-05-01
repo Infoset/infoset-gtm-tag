@@ -1,5 +1,7 @@
 homepage: "https://infoset.app/"
 documentation: "https://infoset.app/help/en"
 versions:
+  - sha: c99c03f93f0ecb7d0b257414bfe10dd8b7cc2583
+    changeNotes: Added advanced settings
   - sha: 526051fcd7343703fe7ee5bf5d703a28dd194e5d
     changeNotes: Initial release
